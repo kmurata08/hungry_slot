@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>スロット</title>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="start" v-on:click="startSlot">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>{{ states[0].text }}</span>
+                </td>
+                <td>
+                    <span>{{ states[1].text }}</span>
+                </td>
+                <td>
+                    <span>{{ states[2].text }}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="STOP" v-on:click="stopReel(0)">
+                </td>
+                <td>
+                    <input type="button" value="STOP" v-on:click="stopReel(1)">
+                </td>
+                <td>
+                    <input type="button" value="STOP" v-on:click="stopReel(2)">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
