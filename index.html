@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>スロット</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div id="app">
@@ -14,13 +15,13 @@
             </tr>
             <tr>
                 <td>
-                    <span>{{ states[0].text }}</span>
+                    <span v-bind:class="[states[0].animCls]">{{ states[0].text }}</span>
                 </td>
                 <td>
-                    <span>{{ states[1].text }}</span>
+                    <span v-bind:class="[states[1].animCls]">{{ states[1].text }}</span>
                 </td>
                 <td>
-                    <span>{{ states[2].text }}</span>
+                    <span v-bind:class="[states[2].animCls]">{{ states[2].text }}</span>
                 </td>
             </tr>
             <tr>
