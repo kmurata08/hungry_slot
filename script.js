@@ -3,9 +3,9 @@ var app = new Vue({
     el: '#app',
     data: {
         items: [
-            ['a', 'b', 'c', 'd', 'e'],
-            ['aa', 'bb', 'cc', 'dd', 'ee', 'ff'],
-            ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg'],
+            ['マヨネーズ', '和風', '中華風', 'デミグラス'],
+            ['肉', 'キムチ', 'すき焼き', 'あんかけ'],
+            ['チャーハン', 'ラーメン', '丼', 'うどん'],
         ],
         // reel state
         states: [
@@ -27,9 +27,17 @@ var app = new Vue({
                 timerId: null,
                 animCls: ""
             }
-        ]
+        ],
+        result: "------"
     },
     methods: {
+        /**
+         * 結果を出力する
+         */
+        showResult: function() {
+            var textMap = this.states.map(x => x.text);
+            this.result = textMap.join('');
+        },
         /**
          * 特定のリールを動かす
          */
@@ -72,6 +80,15 @@ var app = new Vue({
                 setTimeout(function() {
                     reelState.animCls = "";
                 }, 200);
+            }
+
+            // 全部止まったら結果を出す
+            var isAllStop = true;
+            for (var i = 0; i < this.states.length; i++) {
+                isAllStop &= !this.states[i].isRunning;
+            }
+            if (isAllStop) {
+                this.showResult();
             }
         }
     }
