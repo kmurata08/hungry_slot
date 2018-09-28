@@ -28,6 +28,7 @@ var app = new Vue({
                 animCls: ""
             }
         ],
+        nextStopReelIdx: 0,
         result: "------"
     },
     methods: {
@@ -42,6 +43,9 @@ var app = new Vue({
          * 特定のリールを動かす
          */
         startReel: function(idx) {
+            // 「stop」ボタンで止まるリールを初期化
+            this.nextStopReelIdx = 0;
+
             var reelState = this.states[idx];
             if (reelState.isRunning) {
                 return;
@@ -68,8 +72,8 @@ var app = new Vue({
         /**
          * 特定のリールをストップ
          */
-        stopReel: function(idx) {
-            reelState = this.states[idx];
+        stopReel: function() {
+            reelState = this.states[this.nextStopReelIdx];
             if (reelState.isRunning) {
                 // 動いてたら止める
                 clearInterval(reelState.timerId);
@@ -81,12 +85,10 @@ var app = new Vue({
                     reelState.animCls = "";
                 }, 200);
             }
+            this.nextStopReelIdx++;
+            var isAllStop = this.nextStopReelIdx >= this.states.length;
 
             // 全部止まったら結果を出す
-            var isAllStop = true;
-            for (var i = 0; i < this.states.length; i++) {
-                isAllStop &= !this.states[i].isRunning;
-            }
             if (isAllStop) {
                 this.showResult();
             }
