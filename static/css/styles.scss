@@ -1,0 +1,237 @@
+@import "sanitize";
+@mixin media-queries-tab {
+   @media screen and (min-width:600px) and (max-width:960px) {
+       @content;
+   }
+}
+@mixin media-queries-pc {
+   @media screen and (min-width: 960px) {
+       @content;
+   }
+}
+
+html {
+  box-sizing: border-box;
+  /* 1 */
+  cursor: default;
+  /* 2 */
+  font-family: sans-serif;
+  /* 3 */
+  line-height: 1.5;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 4 */
+  -webkit-text-size-adjust: 100%;
+  /* 5 */
+}
+
+body{
+    padding: 14% 0;
+    background-color: #42228e;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-image : url(../img/hs_mouth.png);
+    @include media-queries-tab {
+        padding: 11% 0;
+        background-size: 686px;
+        background-position: 50% 0%;
+    }
+    @include media-queries-pc {
+        background-color: #22154c;
+        background-image : none;
+        padding:0;
+    }
+}
+
+header{
+    position: fixed;
+    top: 0;
+    //上の歯
+    @include media-queries-pc {
+        display: none;
+    }
+    & img:first-child{
+        width: 100%;
+        height: auto;
+        @include media-queries-tab {
+            height: 78px;
+        }
+    }
+    //EMロゴ
+    & img:last-child{
+        width: 46px;
+        height: auto;
+        @include media-queries-tab {
+            width: 84px;
+        }
+    }
+    & a{
+        padding: 1% 0% 1% 0%;
+        position: absolute;
+        top: 3%;
+        left: 4%;
+        @include media-queries-tab {
+            top: 18%;
+        }
+    }
+}
+
+footer{
+    @include media-queries-pc {
+        display: none;
+    }
+    & img{
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        @include media-queries-tab {
+            height: 78px;
+        }
+    }
+}
+
+.slot-container{
+    width:90%;
+    margin: auto;
+    @include media-queries-tab {
+        width: 67%;
+    }
+    @include media-queries-pc {
+        display: none;
+    }
+    & div:first-child{
+        text-align: center;
+    }
+    & table{
+        width: 100%;
+        margin: auto;
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: -12%;
+        @include media-queries-tab {
+            margin-top: -38%;
+        }
+    }
+    & td{
+        display: block;
+    }
+    & h2{
+        margin-bottom: 0%;
+        font-size: 1.0rem;
+        text-align: left !important;
+        @include media-queries-tab {
+            font-size: 1.4rem;
+        }
+    }
+    & span{
+        text-align: center;
+    }
+    & label{
+        float: right;
+    }
+    & tr:first-child{
+        & div{
+            padding: 2%;
+            border-radius: 18px;
+            @include media-queries-tab {
+                padding: 2%;
+            }
+        }
+        & td:first-child > div{
+            background-color: #38a7f8;
+        }
+        & td:nth-child(2) > div{
+            background-color: #77cb38;
+        }
+        & td:nth-child(3) > div{
+            background-color: #ff9400;
+        }
+    }
+}
+
+.title{
+    width: 60%;
+    margin: auto;
+    font-size: 5rem;
+    text-align: center;
+    display: inline-block;
+    @include media-queries-tab {
+        margin-left: 12%;
+    }
+    & img{
+        max-width: 170px;
+        margin-top: -38%;
+        @include media-queries-tab {
+            max-width: 271px;
+            margin-top: -122%;
+        }
+        @include media-queries-pc {
+            margin-top: 0%;
+            max-width: 34%;
+        }
+    }
+    & p{
+        font-size: 0.8rem;
+        margin-bottom: -2%;
+        @include media-queries-tab {
+            font-size: 1.0rem;
+            margin-bottom: 54%;
+        }
+        @include media-queries-pc {
+            margin-bottom: -6%;
+        }
+    }
+}
+
+.push-btn{
+    width: 78%;
+    position: fixed;
+    left: 11%;
+    bottom: -2%;
+    @include media-queries-tab {
+        width: 52%;
+        left: 24%;
+        bottom: 0%;
+        max-height: 164px;
+    }
+}
+
+span.push-btn{
+    position: fixed;
+    top: 86%;
+    font-size: 1.6rem;
+}
+
+.info-icon{
+    width: 6%;
+    margin-top: -36%;
+    @include media-queries-tab {
+        margin-top: -82%;
+    }
+    @include media-queries-pc {
+        width: 2%;
+        margin-top: -4%;
+        right: 18%;
+        position: relative;
+    }
+}
+
+.slot-container-pc{
+    display: none;
+    @include media-queries-pc {
+        display: block;
+        & div:first-child{
+            text-align: center;
+        }
+    }
+}
+
+.monster{
+    height: 88%;
+    position: fixed;
+    bottom: 0;
+
+}
