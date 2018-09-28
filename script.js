@@ -29,6 +29,8 @@ var app = new Vue({
             }
         ],
         nextStopReelIdx: 0,
+        isStopping: true,
+        buttonLabel: "START",
         result: "------"
     },
     methods: {
@@ -68,6 +70,8 @@ var app = new Vue({
             for (var idx = 0; idx < this.states.length; idx++) {
                 this.startReel(idx);
             }
+            this.isStopping = false;
+            this.buttonLabel = "STOP";
         },
         /**
          * 特定のリールをストップ
@@ -86,11 +90,19 @@ var app = new Vue({
                 }, 200);
             }
             this.nextStopReelIdx++;
-            var isAllStop = this.nextStopReelIdx >= this.states.length;
+            this.isStopping = this.nextStopReelIdx >= this.states.length;
 
             // 全部止まったら結果を出す
-            if (isAllStop) {
+            if (this.isStopping) {
                 this.showResult();
+                this.buttonLabel = "START";
+            }
+        },
+        clickButton: function() {
+            if (this.isStopping) {
+                this.startSlot();
+            } else {
+                this.stopReel();
             }
         }
     }

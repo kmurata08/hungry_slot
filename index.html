@@ -48,15 +48,10 @@
                 <tr>
                     <td colspan="3">
                         <div>
-                            <input class="push-btn" value="START" v-on:click="startSlot" type="image" src="static/img/hs_tongue.png">
-                                <span class="push-btn">START<span>
+                            <input class="push-btn" value="START" v-on:click="clickButton" type="image" src="static/img/hs_tongue.png">
+                                <span class="push-btn">{{ buttonLabel }}<span>
                             </input>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="button" value="STOP" v-on:click="stopReel">
                     </td>
                 </tr>
             </table>
