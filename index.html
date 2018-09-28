@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="./footerFixed.js"></script>
     <title>HungrySlot</title>
 </head>
 <body>
@@ -12,83 +11,81 @@
         <img src="static/img/hs_teeth_btm.png">
         <a target="_blank" href="http://www.edgenium.com/"><img src="static/img/hs_logo_em.png"></a>
     </header>
-
-    <section class="slot-container">
-        <div>
-            <div class="title">
-                <p>－酸いも甘いも天任せ－</p>
-                <img src="static/img/hs_logo.png">
-            </div>
-            <img class="info-icon" src="static/img/hs_info.png">
-        </div>
-        <div id="app">
-            <table>
-                <tr>
-                    <td>
-                        <h2>テーマ</h2>
-                        <div>
-                            <span v-bind:class="[states[0].animCls]">{{ states[0].text }}</span>
-                        </div>
-                    </td>
-
-                    <td>
-                        <h2>食材</h2>
-                        <div>
-                            <span v-bind:class="[states[1].animCls]">{{ states[1].text }}</span>
-                        </div>
-                    </td>
-
-                    <td>
-                        <h2>料理名</h2>
-                        <div>
-                            <span v-bind:class="[states[2].animCls]">{{ states[2].text }}</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div>
-                            <input class="push-btn" value="START" v-on:click="clickButton" type="image" src="static/img/hs_tongue.png">
-                                <span class="push-btn">{{ buttonLabel }}<span>
-                            </input>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="slot-container-pc">
-        <div>
-            <div class="title">
-                <p>－酸いも甘いも天任せ－</p>
-                <img src="static/img/hs_logo.png">
-            </div>
-            <img class="info-icon" src="static/img/hs_info.png">
-        </div>
-        <div class="monster-container">
-            <img class="monster" src="static/img/hs_object.png">
-            <img src="static/img/hs_mouth.png">
-            <img src="static/img/hs_teeth_top.png">
-            <img src="static/img/hs_teeth_btm.png">
+    <div id="app">
+        <section class="slot-container">
             <div>
-                <p>ああああああああああ</p>
-                <p>ああああああああああ</p>
-                <p>ああああああああああ</p>
-                <p>ああああああああああ</p>
-                <p>ああああああああああ</p>
-                <p>ああああああああああ</p>
+                <div class="title">
+                    <p>－酸いも甘いも天任せ－</p>
+                    <img src="static/img/hs_logo.png">
+                </div>
+                <img class="info-icon" src="static/img/hs_info.png">
             </div>
-        </div>
-    </section>
-    <section class="recipe">
-        <div class="balloon">
-            <p>テキストが入ります</p>
-            <p>テキストが入ります</p>
-            <p>テキストが入ります</p>
-            <p>テキストが入ります</p>
-        </div>
-    </section>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <h2>テーマ</h2>
+                            <div>
+                                <span v-bind:class="[states[0].animCls]">{{ states[0].text }}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <h2>食材</h2>
+                            <div>
+                                <span v-bind:class="[states[1].animCls]">{{ states[1].text }}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <h2>料理名</h2>
+                            <div>
+                                <span v-bind:class="[states[2].animCls]">{{ states[2].text }}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div>
+                                <input class="push-btn" value="START" v-on:click="clickButton" type="image" src="static/img/hs_tongue.png">
+                                <span class="push-btn">{{ buttonLabel }}<span>
+                                </input>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="slot-container-pc">
+            <div>
+                <div class="title">
+                    <p>－酸いも甘いも天任せ－</p>
+                    <img src="static/img/hs_logo.png">
+                </div>
+                <img class="info-icon" src="static/img/hs_info.png">
+            </div>
+            <div class="monster-container">
+                <img class="monster" src="static/img/hs_object.png">
+                <img src="static/img/hs_mouth.png">
+                <img src="static/img/hs_teeth_top.png">
+                <img src="static/img/hs_teeth_btm.png">
+                <div>
+                    <p>ああああああああああ</p>
+                    <p>ああああああああああ</p>
+                    <p>ああああああああああ</p>
+                    <p>ああああああああああ</p>
+                    <p>ああああああああああ</p>
+                    <p>ああああああああああ</p>
+                </div>
+            </div>
+        </section>
+        <section class="recipe">
+            <div class="balloon">
+                <p>{{ result }}</p>
+            </div>
+        </section>
+    </div>
     <footer>
         <img src="static/img/hs_teeth_top.png">
     </footer>
