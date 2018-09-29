@@ -26,118 +26,189 @@ html {
 }
 
 body{
-    padding: 14% 0;
-    background-color: #42228e;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    background-image : url(../img/hs_mouth.png);
-    @include media-queries-tab {
-        padding: 11% 0;
-        background-size: 686px;
-        background-position: 50% 0%;
-    }
+    background-color: #42218E;
     @include media-queries-pc {
         background-color: #22154c;
-        background-image : none;
-        padding:0;
     }
+}
+
+a {
+    outline: none;
 }
 
 header{
     position: fixed;
     top: 0;
-    //上の歯
-    @include media-queries-pc {
-        display: none;
-    }
-    & img:first-child{
-        width: 100%;
-        height: auto;
+    & svg:first-child{
+        display: block;
+        z-index: 1;
+        position: fixed;
+        top: -30px;
         @include media-queries-tab {
-            height: 78px;
+            top: -60px;
+        }
+        @include media-queries-pc {
+            display: none;
         }
     }
-    //EMロゴ
-    & img:last-child{
-        width: 46px;
-        height: auto;
+    & svg:nth-child(2){
+        display: none;
         @include media-queries-tab {
-            width: 84px;
+            display: none;
+        }
+        @include media-queries-pc {
+            display: block;
+            z-index: 1;
+            position: fixed;
+            width: 24%;
+            top: 37%;
+            left: 38%;
         }
     }
     & a{
-        padding: 1% 0% 1% 0%;
-        position: absolute;
-        top: 3%;
+        z-index: 1;
+        position: fixed;
+        top: 1%;
         left: 4%;
         @include media-queries-tab {
-            top: 18%;
+            top: 2%;
+        }
+        @include media-queries-pc {
+            top: 4%;
+        }
+        & img{
+            width: 46px;
+            height: auto;
+            @include media-queries-tab {
+                width: 84px;
+            }
+            @include media-queries-pc {
+                width: 84px;
+            }
+        }
+    }
+    & .title{
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        margin-top: 16%;
+        text-align: center;
+        @include media-queries-pc {
+            margin-top: 3%;
+        }
+        & img{
+            max-width: 170px;
+            @include media-queries-tab {
+                max-width: 270px;
+            }
+            @include media-queries-pc {
+                max-width: 200px;
+            }
+        }
+        & svg{
+            position: absolute;
+            width: 6%;
+            margin-top: 5%;
+            margin-left: 5%;
+            @include media-queries-pc {
+                width: 2%;
+                right: 18%;
+                position: relative;
+            }
         }
     }
 }
 
 footer{
-    @include media-queries-pc {
-        display: none;
-    }
-    & img{
-        width: 100%;
-        height: auto;
+    & svg{
         position: fixed;
-        bottom: 0;
+        bottom: -30px;
         @include media-queries-tab {
-            height: 78px;
+            bottom: -60px;
+        }
+        @include media-queries-pc {
+            bottom: -30px;
+            width: 24%;
+            left: 38%;
         }
     }
 }
 
-.slot-container{
-    width:90%;
-    margin: auto;
+#app{
+    height: 100vh;
+    background-size: contain;
+    background-position: center;
+    background-image : url(../img/hs_mouth.png);
     @include media-queries-tab {
-        width: 67%;
+        margin-top: -2%;
     }
     @include media-queries-pc {
-        display: none;
+        background-image : url(../img/hs_domo.png);
     }
-    & div:first-child{
-        text-align: center;
+}
+
+.slot-container{
+    padding: 54% 5% 0;
+    color: white;
+    @include media-queries-tab {
+        padding: 62% 16% 0;
+    }
+    @include media-queries-pc {
+        padding: 27% 38% 0;
     }
     & table{
         width: 100%;
         margin: auto;
-        font-size: 2.4rem;
+        font-size: 2rem;
         font-weight: bold;
         text-align: center;
         margin-top: -12%;
         @include media-queries-tab {
             margin-top: -38%;
         }
+        @include media-queries-pc {
+            height: 425px;
+            margin-top: -29%;
+            background-color: #42218E;
+            background-size: contain;
+            background-position: center;
+            background-image : url(../img/hs_mouth.png);
+        }
     }
     & td{
         display: block;
+        padding: 0 10%;
     }
-    & h2{
-        margin-bottom: 0%;
-        font-size: 1.0rem;
-        text-align: left !important;
+    & td:first-child{
+        @include media-queries-pc {
+            margin-top: 24%;
+        }
+    }
+    & td:nth-child(2),td:nth-child(3){
+        margin-top: 3%;
+    }
+    & label{
+        display: block;
+        font-size: 1rem;
+        text-align: left;
         @include media-queries-tab {
             font-size: 1.4rem;
         }
+        @include media-queries-pc {
+            font-size: .8rem;
+        }
     }
-    & span{
-        text-align: center;
-    }
-    & label{
-        float: right;
-    }
-    & tr:first-child{
+    & tr{
         & div{
-            padding: 2%;
-            border-radius: 18px;
+            text-align: center;
+            padding: 4%;
+            border-radius: 10px;
+            font-size: 1.4rem;
             @include media-queries-tab {
-                padding: 2%;
+                font-size: 2rem;
+            }
+            @include media-queries-pc {
+                font-size: 1.4rem;
             }
         }
         & td:first-child > div{
@@ -150,144 +221,62 @@ footer{
             background-color: #ff9400;
         }
     }
-}
-
-.title{
-    width: 60%;
-    margin: auto;
-    font-size: 5rem;
-    text-align: center;
-    display: inline-block;
-    @include media-queries-tab {
-        margin-left: 12%;
-    }
-    & img{
-        max-width: 170px;
-        margin-top: -38%;
+    & .push-btn{
+        position: fixed;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 150px;
+        background-size: contain;
+        background-position: center;
+        background-image : url(../img/hs_tongue.png);
         @include media-queries-tab {
-            max-width: 271px;
-            margin-top: -122%;
+            left: 17%;
+            width: 65%;
+            height: 250px;
         }
         @include media-queries-pc {
-            margin-top: 0%;
-            max-width: 209px;
+            bottom: 0;
+            left: 42%;
+            width: 16%;
+            height: 100px;
         }
-    }
-    & p{
-        font-size: 0.8rem;
-        margin-bottom: -2%;
-        @include media-queries-tab {
-            font-size: 1.0rem;
-            margin-bottom: 54%;
+        & input{
+            width: 80%;
+            height: 125px;
+            position: fixed;
+            left: 10%;
+            bottom: 4%;
+            border: none;
+            outline: none;
+            @include media-queries-tab {
+                width: 65%;
+                height: 205px;
+                left: 22%;
+            }
+            @include media-queries-pc {
+                left: 42%;
+                bottom: 2%;
+                width: 16%;
+                height: 90px;
+            }
+            &:hover{
+                cursor: pointer;
+            }
         }
-        @include media-queries-pc {
-            margin-bottom: -6%;
-        }
-    }
-}
-
-.push-btn{
-    width: 78%;
-    position: fixed;
-    left: 11%;
-    bottom: -2%;
-    @include media-queries-tab {
-        width: 52%;
-        left: 24%;
-        bottom: 0%;
-        max-height: 164px;
-    }
-}
-
-span.push-btn{
-    position: fixed;
-    top: 86%;
-    font-size: 1.6rem;
-}
-
-.info-icon{
-    width: 6%;
-    margin-top: -36%;
-    @include media-queries-tab {
-        margin-top: -82%;
-    }
-    @include media-queries-pc {
-        width: 2%;
-        margin-top: -4%;
-        right: 18%;
-        position: relative;
-    }
-}
-
-.slot-container-pc{
-    display: none;
-    @include media-queries-pc {
-        display: block;
-        & div:first-child{
+        & span{
+            display: block;
+            margin-top: 15%;
             text-align: center;
+            font-size: 1.6rem;
+            @include media-queries-tab {
+                margin-top: 16%;
+                font-size: 2rem;
+            }
+            @include media-queries-pc {
+                margin-top: 10%;
+                font-size: 1.4rem;
+            }
         }
     }
-}
-
-.monster-container{
-    position:relative;
-    width: 50%;
-    & img:nth-child(2){
-        width: 24%;
-        height: 56%;
-        left: 9%;
-        position: fixed;
-        bottom: 3%;
-    }
-    & img:nth-child(3){
-        width: 24%;
-        height: 4%;
-        left: 9%;
-        position: fixed;
-        bottom: 3%;
-    }
-    & img:nth-child(4){
-        width: 24%;
-        height: 4%;
-        left: 9%;
-        position: fixed;
-        bottom: 55%;
-    }
-}
-
-.monster{
-    height: 88%;
-    width: 50%;
-    position: fixed;
-    bottom: 0;
-}
-
-.recipe{
-    width: 44%;
-    float: right;
-    display: none;
-    @include media-queries-pc {
-        display: block;
-    }
-}
-
-.balloon {
-      background-color: #fff;
-      padding: 6%;
-      width: 90%;
-      position: relative;
-      & p{
-          color: black;
-      }
-}
-
-.balloon:after {
-  border-right: 12px solid #fff;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  content: '';
-  margin-top: -10px;
-  position: absolute;
-  left: -12px;
-  top: 50%;
 }
