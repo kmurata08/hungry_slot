@@ -10,6 +10,53 @@
    }
 }
 
+//effect
+@keyframes skew {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+
+  5% {
+    transform: skew(5deg, 4.2deg);
+  }
+
+  10% {
+    transform: skew(-4deg, -3deg);
+  }
+
+  15% {
+    transform: skew(3deg, 2.2deg);
+  }
+
+  20% {
+    transform: skew(-2deg, -1.5deg);
+  }
+
+  25% {
+    transform: skew(0.9deg, 0.9deg);
+  }
+
+  30% {
+    transform: skew(-0.6deg, -0.6deg);
+  }
+
+  35% {
+    transform: skew(0.3deg, 0.3deg);
+  }
+
+  40% {
+    transform: skew(-0.2deg, -0.2deg);
+  }
+
+  45% {
+    transform: skew(0.1deg, 0.1deg);
+  }
+
+  50% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
 html {
   box-sizing: border-box;
   /* 1 */
@@ -148,7 +195,7 @@ footer{
 }
 
 .slot-container{
-    padding: 54% 5% 0;
+    padding: 48% 5% 0;
     color: white;
     @include media-queries-tab {
         padding: 62% 16% 0;
@@ -167,7 +214,7 @@ footer{
             margin-top: -38%;
         }
         @include media-queries-pc {
-            height: 425px;
+            height: 63vh;
             margin-top: -29%;
             background-color: #42218E;
             background-size: contain;
@@ -189,7 +236,7 @@ footer{
     }
     & label{
         display: block;
-        font-size: 1rem;
+        font-size: .8rem;
         text-align: left;
         @include media-queries-tab {
             font-size: 1.4rem;
@@ -226,10 +273,11 @@ footer{
         bottom: 0;
         left: 10%;
         width: 80%;
-        height: 150px;
+        height: 140px;
         background-size: contain;
         background-position: center;
         background-image : url(../img/hs_tongue.png);
+        animation: skew 2.3s linear infinite;
         @include media-queries-tab {
             left: 17%;
             width: 65%;
