@@ -479,6 +479,16 @@ textarea,
 [hidden][aria-hidden="false"]:focus {
   clip: auto; }
 
+.hover-op {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent; }
+  .hover-op:hover {
+    cursor: pointer;
+    opacity: 0.9; }
+
 @keyframes skew {
   0% {
     transform: skew(0deg, 0deg); }
@@ -517,6 +527,8 @@ html {
   /* 5 */ }
 
 body {
+  height: 100vh;
+  overflow: hidden;
   background-color: #42218E; }
   @media screen and (min-width: 960px) {
     body {
@@ -580,7 +592,7 @@ header {
     text-align: center; }
     @media screen and (min-width: 960px) {
       header .title {
-        margin-top: 3%; } }
+        margin-top: 4%; } }
     header .title img {
       max-width: 170px; }
       @media screen and (min-width: 600px) and (max-width: 960px) {
@@ -622,6 +634,7 @@ footer svg {
       margin-top: -2%; } }
   @media screen and (min-width: 960px) {
     #app {
+      margin-top: 2%;
       background-image: url(../img/hs_domo.png); } }
 
 .slot-container {
@@ -645,8 +658,8 @@ footer svg {
         margin-top: -38%; } }
     @media screen and (min-width: 960px) {
       .slot-container table {
-        height: 63vh;
-        margin-top: -29%;
+        height: 66vh;
+        margin-top: -37%;
         background-color: #42218E;
         background-size: contain;
         background-position: center;
@@ -722,10 +735,10 @@ footer svg {
           left: 22%; } }
       @media screen and (min-width: 960px) {
         .slot-container .push-btn input {
-          left: 42%;
+          left: 1%;
           bottom: 2%;
-          width: 16%;
-          height: 90px; } }
+          width: 100%;
+          height: 100px; } }
       .slot-container .push-btn input:hover {
         cursor: pointer; }
     .slot-container .push-btn span {
