@@ -512,6 +512,12 @@ textarea,
     transform: skew(0.1deg, 0.1deg); }
   50% {
     transform: skew(0deg, 0deg); } }
+.pc-only {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    .pc-only {
+      display: block; } }
+
 html {
   box-sizing: border-box;
   /* 1 */
@@ -530,7 +536,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #42218E; }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 769px) {
     body {
       background-color: #22154c; } }
 
@@ -545,43 +551,21 @@ header {
     z-index: 1;
     position: fixed;
     top: -30px; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
-      header svg:first-child {
-        top: -60px; } }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 769px) {
       header svg:first-child {
         display: none; } }
-  header svg:nth-child(2) {
-    display: none; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
-      header svg:nth-child(2) {
-        display: none; } }
-    @media screen and (min-width: 960px) {
-      header svg:nth-child(2) {
-        display: block;
-        z-index: 1;
-        position: fixed;
-        width: 24%;
-        top: 37%;
-        left: 38%; } }
   header a {
     z-index: 1;
     position: fixed;
     top: 1%;
     left: 4%; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
-      header a {
-        top: 2%; } }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 769px) {
       header a {
         top: 4%; } }
     header a img {
       width: 46px;
       height: auto; }
-      @media screen and (min-width: 600px) and (max-width: 960px) {
-        header a img {
-          width: 84px; } }
-      @media screen and (min-width: 960px) {
+      @media screen and (min-width: 769px) {
         header a img {
           width: 84px; } }
   header .title {
@@ -590,23 +574,20 @@ header {
     width: 100%;
     margin-top: 16%;
     text-align: center; }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 769px) {
       header .title {
         margin-top: 4%; } }
     header .title img {
       max-width: 170px; }
-      @media screen and (min-width: 600px) and (max-width: 960px) {
+      @media screen and (min-width: 769px) {
         header .title img {
-          max-width: 270px; } }
-      @media screen and (min-width: 960px) {
-        header .title img {
-          max-width: 200px; } }
+          display: none; } }
     header .title svg {
       position: absolute;
       width: 6%;
       margin-top: 5%;
       margin-left: 5%; }
-      @media screen and (min-width: 960px) {
+      @media screen and (min-width: 769px) {
         header .title svg {
           width: 2%;
           right: 18%;
@@ -615,12 +596,9 @@ header {
 footer svg {
   position: fixed;
   bottom: -30px; }
-  @media screen and (min-width: 600px) and (max-width: 960px) {
+  @media screen and (min-width: 769px) {
     footer svg {
-      bottom: -60px; } }
-  @media screen and (min-width: 960px) {
-    footer svg {
-      bottom: -30px;
+      bottom: -25px;
       width: 24%;
       left: 38%; } }
 
@@ -629,23 +607,31 @@ footer svg {
   background-size: contain;
   background-position: center;
   background-image: url(../img/hs_mouth.png); }
-  @media screen and (min-width: 600px) and (max-width: 960px) {
+  @media screen and (min-width: 769px) {
     #app {
-      margin-top: -2%; } }
-  @media screen and (min-width: 960px) {
-    #app {
-      margin-top: 2%;
-      background-image: url(../img/hs_domo.png); } }
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      background-image: url(../img/hs_monster.png); } }
+  #app svg {
+    display: none; }
+    @media screen and (min-width: 769px) {
+      #app svg {
+        display: block;
+        z-index: 1;
+        position: fixed;
+        width: 24%;
+        top: 37%;
+        left: 38%; } }
 
 .slot-container {
   padding: 48% 5% 0;
   color: white; }
-  @media screen and (min-width: 600px) and (max-width: 960px) {
+  @media screen and (min-width: 769px) {
     .slot-container {
-      padding: 62% 16% 0; } }
-  @media screen and (min-width: 960px) {
-    .slot-container {
-      padding: 27% 38% 0; } }
+      padding: 17% 0;
+      margin: 0px 37%; } }
   .slot-container table {
     width: 100%;
     margin: auto;
@@ -653,21 +639,13 @@ footer svg {
     font-weight: bold;
     text-align: center;
     margin-top: -12%; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
+    @media screen and (min-width: 769px) {
       .slot-container table {
-        margin-top: -38%; } }
-    @media screen and (min-width: 960px) {
-      .slot-container table {
-        height: 66vh;
-        margin-top: -37%;
-        background-color: #42218E;
-        background-size: contain;
-        background-position: center;
-        background-image: url(../img/hs_mouth.png); } }
+        margin-top: 10%; } }
   .slot-container td {
     display: block;
     padding: 0 10%; }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 769px) {
     .slot-container td:first-child {
       margin-top: 24%; } }
   .slot-container td:nth-child(2), .slot-container td:nth-child(3) {
@@ -676,10 +654,7 @@ footer svg {
     display: block;
     font-size: .8rem;
     text-align: left; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
-      .slot-container label {
-        font-size: 1.4rem; } }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 769px) {
       .slot-container label {
         font-size: .8rem; } }
   .slot-container tr div {
@@ -687,10 +662,7 @@ footer svg {
     padding: 4%;
     border-radius: 10px;
     font-size: 1.4rem; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
-      .slot-container tr div {
-        font-size: 2rem; } }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 769px) {
       .slot-container tr div {
         font-size: 1.4rem; } }
   .slot-container tr td:first-child > div {
@@ -704,22 +676,17 @@ footer svg {
     bottom: 0;
     left: 10%;
     width: 80%;
-    height: 140px;
+    height: 20vh;
     background-size: contain;
     background-position: center;
     background-image: url(../img/hs_tongue.png);
     animation: skew 2.3s linear infinite; }
-    @media screen and (min-width: 600px) and (max-width: 960px) {
+    @media screen and (min-width: 769px) {
       .slot-container .push-btn {
-        left: 17%;
-        width: 65%;
-        height: 250px; } }
-    @media screen and (min-width: 960px) {
-      .slot-container .push-btn {
-        bottom: 0;
+        bottom: -34px;
         left: 42%;
         width: 16%;
-        height: 100px; } }
+        height: 20vh; } }
     .slot-container .push-btn input {
       width: 80%;
       height: 125px;
@@ -728,31 +695,23 @@ footer svg {
       bottom: 4%;
       border: none;
       outline: none; }
-      @media screen and (min-width: 600px) and (max-width: 960px) {
-        .slot-container .push-btn input {
-          width: 65%;
-          height: 205px;
-          left: 22%; } }
-      @media screen and (min-width: 960px) {
+      @media screen and (min-width: 769px) {
         .slot-container .push-btn input {
           left: 1%;
           bottom: 2%;
           width: 100%;
-          height: 100px; } }
+          height: 17vh; } }
       .slot-container .push-btn input:hover {
         cursor: pointer; }
     .slot-container .push-btn span {
       display: block;
-      margin-top: 15%;
+      margin-top: 8%;
       text-align: center;
       font-size: 1.6rem; }
-      @media screen and (min-width: 600px) and (max-width: 960px) {
+      @media screen and (min-width: 769px) {
         .slot-container .push-btn span {
-          margin-top: 16%;
-          font-size: 2rem; } }
-      @media screen and (min-width: 960px) {
-        .slot-container .push-btn span {
-          margin-top: 10%;
+          margin-top: 35px;
+          bottom: 60px;
           font-size: 1.4rem; } }
 
 /*# sourceMappingURL=styles.css.map */
