@@ -21,6 +21,18 @@
         opacity: 0.9;
     }
 }
+.hover-buru {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    &:hover {
+        cursor: pointer;
+        animation: skew 2.3s linear infinite;
+    }
+}
+
 //effect
 @keyframes skew {
   0% {
@@ -67,6 +79,9 @@
     transform: skew(0deg, 0deg);
   }
 }
+.buruburu {
+    animation: skew 2.3s linear infinite;
+}
 
 .pc-only {
     display: none;
@@ -95,6 +110,9 @@ body{
     height: 100vh;
     overflow: hidden;
     background-color: #42218E;
+    @include media-queries-tab {
+        background-color: #22154c;
+    }
     @include media-queries-pc {
         background-color: #22154c;
     }
@@ -107,6 +125,7 @@ a {
 header{
     position: fixed;
     top: 0;
+    z-index:2;
     & svg:first-child{
         display: block;
         z-index: 1;
@@ -171,34 +190,34 @@ header{
 }
 
 footer{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @include media-queries-tab {
-        background: #F54EA2;
-        width: 75%;
-        height: 19vh;
         position: fixed;
-        z-index: 1;
+        bottom: 0;
+    }
+    @include media-queries-pc {
+        position: fixed;
         bottom: 0;
     }
     & svg{
         position: fixed;
-        bottom: 0px;
+        bottom: 0;
         z-index: 2;
         @include media-queries-tab {
-            z-index: 2;
-            bottom: 19vh;
-            width: 36vw;
-            left: 32%;
+            position: static;
+            width: 30vw;
         }
         @include media-queries-pc {
-            bottom: -25px;
-            width: 30vw;
-            left: 35%;
+            position: static;
+            width: 23vw;
         }
     }
     & .push-btn{
-        position: fixed;
-        bottom: 0;
-        left: 10%;
+        margin-top: -13%;
         width: 80%;
         height: 20vh;
         background-size: contain;
@@ -206,15 +225,25 @@ footer{
         background-image : url(../img/hs_tongue.png);
         animation: skew 2.3s linear infinite;
         color: white;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        &:hover {
+            cursor: pointer;
+        }
         @include media-queries-tab {
-            bottom: 19%;
-            height: 10vh;
+            position: fixed;
+            bottom: 1%;
+            height: 13vh;
         }
         @include media-queries-pc {
+            position: fixed;
             bottom: -34px;
-            left: 42%;
-            width: 16%;
-            height: 20vh;
+            left: 40%;
+            width: 20%;
+            height: 12vw;
         }
         & input{
             width: 80%;
@@ -245,8 +274,7 @@ footer{
                 font-size: 1.4rem;
             }
             @include media-queries-pc {
-                margin-top: 45px;
-                bottom: 60px;
+                margin-top: 17%;
                 font-size: 1.4rem;
             }
         }
@@ -259,11 +287,12 @@ footer{
     background-position: center;
     background-image : url(../img/hs_mouth.png);
     @include media-queries-tab {
+        background-position: bottom;
         position: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: 67%;
         width: 100%;
         bottom: 0;
         background-image : url(../img/hs_monster.png);
@@ -281,17 +310,6 @@ footer{
     }
     & svg{
         display: block;
-        @include media-queries-tab {
-            display: block;
-        }
-        @include media-queries-pc {
-            display: block;
-            z-index: 1;
-            position: fixed;
-            width: 24vw;
-            left: 38%;
-            bottom: 0%;
-        }
     }
 }
 
@@ -302,7 +320,7 @@ footer{
         position: fixed;
         padding: 0;
         margin: 11% auto;
-        width: 35%;
+        width: 40%;
     }
     @include media-queries-pc {
         position: fixed;
