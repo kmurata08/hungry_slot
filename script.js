@@ -87,7 +87,7 @@ var app = new Vue({
                 reelState.animCls = "buruburu";
                 setTimeout(function() {
                     reelState.animCls = "";
-                }, 200);
+                }, 400);
             }
             this.nextStopReelIdx++;
             this.isStopping = this.nextStopReelIdx >= this.states.length;
