@@ -489,6 +489,16 @@ textarea,
     cursor: pointer;
     opacity: 0.9; }
 
+.hover-buru {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent; }
+  .hover-buru:hover {
+    cursor: pointer;
+    animation: skew 2.3s linear infinite; }
+
 @keyframes skew {
   0% {
     transform: skew(0deg, 0deg); }
@@ -512,6 +522,9 @@ textarea,
     transform: skew(0.1deg, 0.1deg); }
   50% {
     transform: skew(0deg, 0deg); } }
+.buruburu {
+  animation: skew 2.3s linear infinite; }
+
 .pc-only {
   display: none; }
   @media screen and (min-width: 960px) {
@@ -536,6 +549,9 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #42218E; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    body {
+      background-color: #22154c; } }
   @media screen and (min-width: 960px) {
     body {
       background-color: #22154c; } }
@@ -545,7 +561,8 @@ a {
 
 header {
   position: fixed;
-  top: 0; }
+  top: 0;
+  z-index: 2; }
   header svg:first-child {
     display: block;
     z-index: 1;
@@ -602,80 +619,89 @@ header {
           right: 18%;
           position: relative; } }
 
-@media screen and (min-width: 705px) and (max-width: 960px) {
-  footer {
-    background: #F54EA2;
-    width: 75%;
-    height: 19vh;
-    position: fixed;
-    z-index: 1;
-    bottom: 0; } }
-footer svg {
-  position: fixed;
-  bottom: 0px;
-  z-index: 2; }
+footer {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   @media screen and (min-width: 705px) and (max-width: 960px) {
-    footer svg {
-      z-index: 2;
-      bottom: 19vh;
-      width: 36vw;
-      left: 32%; } }
+    footer {
+      position: fixed;
+      bottom: 0; } }
   @media screen and (min-width: 960px) {
-    footer svg {
-      bottom: -25px;
-      width: 30vw;
-      left: 35%; } }
-footer .push-btn {
-  position: fixed;
-  bottom: 0;
-  left: 10%;
-  width: 80%;
-  height: 20vh;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../img/hs_tongue.png);
-  animation: skew 2.3s linear infinite;
-  color: white; }
-  @media screen and (min-width: 705px) and (max-width: 960px) {
-    footer .push-btn {
-      bottom: 19%;
-      height: 10vh; } }
-  @media screen and (min-width: 960px) {
-    footer .push-btn {
-      bottom: -34px;
-      left: 42%;
-      width: 16%;
-      height: 20vh; } }
-  footer .push-btn input {
-    width: 80%;
-    height: 125px;
+    footer {
+      position: fixed;
+      bottom: 0; } }
+  footer svg {
     position: fixed;
-    left: 10%;
-    bottom: 4%;
-    border: none;
-    outline: none; }
-    @media screen and (min-width: 960px) {
-      footer .push-btn input {
-        left: 1%;
-        bottom: 2%;
-        width: 100%;
-        height: 17vh; } }
-    footer .push-btn input:hover {
-      cursor: pointer; }
-  footer .push-btn span {
-    display: block;
-    margin-top: 8%;
-    text-align: center;
-    font-size: 1.6rem; }
+    bottom: 0;
+    z-index: 2; }
     @media screen and (min-width: 705px) and (max-width: 960px) {
-      footer .push-btn span {
-        margin-top: 4%;
-        font-size: 1.4rem; } }
+      footer svg {
+        position: static;
+        width: 30vw; } }
     @media screen and (min-width: 960px) {
-      footer .push-btn span {
-        margin-top: 45px;
-        bottom: 60px;
-        font-size: 1.4rem; } }
+      footer svg {
+        position: static;
+        width: 23vw; } }
+  footer .push-btn {
+    margin-top: -13%;
+    width: 80%;
+    height: 20vh;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/hs_tongue.png);
+    animation: skew 2.3s linear infinite;
+    color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent; }
+    footer .push-btn:hover {
+      cursor: pointer; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      footer .push-btn {
+        position: fixed;
+        bottom: 1%;
+        height: 13vh; } }
+    @media screen and (min-width: 960px) {
+      footer .push-btn {
+        position: fixed;
+        bottom: -34px;
+        left: 40%;
+        width: 20%;
+        height: 12vw; } }
+    footer .push-btn input {
+      width: 80%;
+      height: 125px;
+      position: fixed;
+      left: 10%;
+      bottom: 4%;
+      border: none;
+      outline: none; }
+      @media screen and (min-width: 960px) {
+        footer .push-btn input {
+          left: 1%;
+          bottom: 2%;
+          width: 100%;
+          height: 17vh; } }
+      footer .push-btn input:hover {
+        cursor: pointer; }
+    footer .push-btn span {
+      display: block;
+      margin-top: 8%;
+      text-align: center;
+      font-size: 1.6rem; }
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        footer .push-btn span {
+          margin-top: 4%;
+          font-size: 1.4rem; } }
+      @media screen and (min-width: 960px) {
+        footer .push-btn span {
+          margin-top: 17%;
+          font-size: 1.4rem; } }
 
 #app {
   height: 100vh;
@@ -684,11 +710,12 @@ footer .push-btn {
   background-image: url(../img/hs_mouth.png); }
   @media screen and (min-width: 705px) and (max-width: 960px) {
     #app {
+      background-position: bottom;
       position: fixed;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
+      height: 67%;
       width: 100%;
       bottom: 0;
       background-image: url(../img/hs_monster.png); } }
@@ -705,17 +732,6 @@ footer .push-btn {
       background-image: url(../img/hs_monster.png); } }
   #app svg {
     display: block; }
-    @media screen and (min-width: 705px) and (max-width: 960px) {
-      #app svg {
-        display: block; } }
-    @media screen and (min-width: 960px) {
-      #app svg {
-        display: block;
-        z-index: 1;
-        position: fixed;
-        width: 24vw;
-        left: 38%;
-        bottom: 0%; } }
 
 .slot-container {
   color: white;
@@ -725,7 +741,7 @@ footer .push-btn {
       position: fixed;
       padding: 0;
       margin: 11% auto;
-      width: 35%; } }
+      width: 40%; } }
   @media screen and (min-width: 960px) {
     .slot-container {
       position: fixed;
