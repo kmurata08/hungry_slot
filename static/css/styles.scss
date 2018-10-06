@@ -1,9 +1,15 @@
 @import "sanitize";
-@mixin media-queries-pc {
-   @media screen and (min-width: 769px) {
-       @content;
-   }
+@mixin media-queries-tab {
+    @media screen and (min-width:705px) and (max-width:960px) {
+        @content;
+    }
 }
+@mixin media-queries-pc {
+    @media screen and (min-width: 960px) {
+        @content;
+    }
+}
+
 .hover-op {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -106,7 +112,9 @@ header{
         z-index: 1;
         position: fixed;
         top: -30px;
-
+        @include media-queries-tab {
+            display: none;
+        }
         @include media-queries-pc {
             display: none;
         }
@@ -116,14 +124,15 @@ header{
         position: fixed;
         top: 1%;
         left: 4%;
-
         @include media-queries-pc {
             top: 4%;
         }
         & img{
             width: 46px;
             height: auto;
-
+            @include media-queries-tab {
+                width: 60px;
+            }
             @include media-queries-pc {
                 width: 84px;
             }
@@ -140,6 +149,9 @@ header{
         }
         & img{
             max-width: 170px;
+            @include media-queries-tab {
+                display: none;
+            }
             @include media-queries-pc {
                 display: none;
             }
@@ -159,13 +171,84 @@ header{
 }
 
 footer{
+    @include media-queries-tab {
+        background: #F54EA2;
+        width: 75%;
+        height: 19vh;
+        position: fixed;
+        z-index: 1;
+        bottom: 0;
+    }
     & svg{
         position: fixed;
-        bottom: -30px;
+        bottom: 0px;
+        z-index: 2;
+        @include media-queries-tab {
+            z-index: 2;
+            bottom: 19vh;
+            width: 36vw;
+            left: 32%;
+        }
         @include media-queries-pc {
             bottom: -25px;
-            width: 24%;
-            left: 38%;
+            width: 30vw;
+            left: 35%;
+        }
+    }
+    & .push-btn{
+        position: fixed;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 20vh;
+        background-size: contain;
+        background-position: center;
+        background-image : url(../img/hs_tongue.png);
+        animation: skew 2.3s linear infinite;
+        color: white;
+        @include media-queries-tab {
+            bottom: 19%;
+            height: 10vh;
+        }
+        @include media-queries-pc {
+            bottom: -34px;
+            left: 42%;
+            width: 16%;
+            height: 20vh;
+        }
+        & input{
+            width: 80%;
+            height: 125px;
+            position: fixed;
+            left: 10%;
+            bottom: 4%;
+            border: none;
+            outline: none;
+
+            @include media-queries-pc {
+                left: 1%;
+                bottom: 2%;
+                width: 100%;
+                height: 17vh;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        & span{
+            display: block;
+            margin-top: 8%;
+            text-align: center;
+            font-size: 1.6rem;
+            @include media-queries-tab {
+                margin-top: 4%;
+                font-size: 1.4rem;
+            }
+            @include media-queries-pc {
+                margin-top: 45px;
+                bottom: 60px;
+                font-size: 1.4rem;
+            }
         }
     }
 }
@@ -175,35 +258,57 @@ footer{
     background-size: contain;
     background-position: center;
     background-image : url(../img/hs_mouth.png);
-
-    @include media-queries-pc {
+    @include media-queries-tab {
         position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        background-image : url(../img/hs_monster.png);
+    }
+    @include media-queries-pc {
+        background-position: bottom;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 100%;
         bottom: 0;
         background-image : url(../img/hs_monster.png);
     }
     & svg{
-        display: none;
-
+        display: block;
+        @include media-queries-tab {
+            display: block;
+        }
         @include media-queries-pc {
             display: block;
             z-index: 1;
             position: fixed;
-            width: 24%;
-            top: 37%;
+            width: 24vw;
             left: 38%;
+            bottom: 0%;
         }
     }
 }
 
 .slot-container{
-    padding: 48% 5% 0;
     color: white;
-
+    padding: 50% 0;
+    @include media-queries-tab {
+        position: fixed;
+        padding: 0;
+        margin: 11% auto;
+        width: 35%;
+    }
     @include media-queries-pc {
-        padding: 17% 0;
-        margin: 0px 37%;
+        position: fixed;
+        padding: 0;
+        margin: 70px auto;
+        width: 24%;
     }
     & table{
         width: 100%;
@@ -220,11 +325,6 @@ footer{
     & td{
         display: block;
         padding: 0 10%;
-    }
-    & td:first-child{
-        @include media-queries-pc {
-            margin-top: 24%;
-        }
     }
     & td:nth-child(2),td:nth-child(3){
         margin-top: 3%;
@@ -257,54 +357,6 @@ footer{
         }
         & td:nth-child(3) > div{
             background-color: #ff9400;
-        }
-    }
-    & .push-btn{
-        position: fixed;
-        bottom: 0;
-        left: 10%;
-        width: 80%;
-        height: 20vh;
-        background-size: contain;
-        background-position: center;
-        background-image : url(../img/hs_tongue.png);
-        animation: skew 2.3s linear infinite;
-
-        @include media-queries-pc {
-            bottom: -34px;
-            left: 42%;
-            width: 16%;
-            height: 20vh;
-        }
-        & input{
-            width: 80%;
-            height: 125px;
-            position: fixed;
-            left: 10%;
-            bottom: 4%;
-            border: none;
-            outline: none;
-
-            @include media-queries-pc {
-                left: 1%;
-                bottom: 2%;
-                width: 100%;
-                height: 17vh;
-            }
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        & span{
-            display: block;
-            margin-top: 8%;
-            text-align: center;
-            font-size: 1.6rem;
-            @include media-queries-pc {
-                margin-top: 35px;
-                bottom: 60px;
-                font-size: 1.4rem;
-            }
         }
     }
 }

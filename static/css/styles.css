@@ -514,7 +514,7 @@ textarea,
     transform: skew(0deg, 0deg); } }
 .pc-only {
   display: none; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 960px) {
     .pc-only {
       display: block; } }
 
@@ -536,7 +536,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #42218E; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 960px) {
     body {
       background-color: #22154c; } }
 
@@ -551,7 +551,10 @@ header {
     z-index: 1;
     position: fixed;
     top: -30px; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      header svg:first-child {
+        display: none; } }
+    @media screen and (min-width: 960px) {
       header svg:first-child {
         display: none; } }
   header a {
@@ -559,13 +562,16 @@ header {
     position: fixed;
     top: 1%;
     left: 4%; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 960px) {
       header a {
         top: 4%; } }
     header a img {
       width: 46px;
       height: auto; }
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        header a img {
+          width: 60px; } }
+      @media screen and (min-width: 960px) {
         header a img {
           width: 84px; } }
   header .title {
@@ -574,12 +580,15 @@ header {
     width: 100%;
     margin-top: 16%;
     text-align: center; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 960px) {
       header .title {
         margin-top: 4%; } }
     header .title img {
       max-width: 170px; }
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        header .title img {
+          display: none; } }
+      @media screen and (min-width: 960px) {
         header .title img {
           display: none; } }
     header .title svg {
@@ -587,51 +596,142 @@ header {
       width: 6%;
       margin-top: 5%;
       margin-left: 5%; }
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: 960px) {
         header .title svg {
           width: 2%;
           right: 18%;
           position: relative; } }
 
+@media screen and (min-width: 705px) and (max-width: 960px) {
+  footer {
+    background: #F54EA2;
+    width: 75%;
+    height: 19vh;
+    position: fixed;
+    z-index: 1;
+    bottom: 0; } }
 footer svg {
   position: fixed;
-  bottom: -30px; }
-  @media screen and (min-width: 769px) {
+  bottom: 0px;
+  z-index: 2; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    footer svg {
+      z-index: 2;
+      bottom: 19vh;
+      width: 36vw;
+      left: 32%; } }
+  @media screen and (min-width: 960px) {
     footer svg {
       bottom: -25px;
-      width: 24%;
-      left: 38%; } }
+      width: 30vw;
+      left: 35%; } }
+footer .push-btn {
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 20vh;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../img/hs_tongue.png);
+  animation: skew 2.3s linear infinite;
+  color: white; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    footer .push-btn {
+      bottom: 19%;
+      height: 10vh; } }
+  @media screen and (min-width: 960px) {
+    footer .push-btn {
+      bottom: -34px;
+      left: 42%;
+      width: 16%;
+      height: 20vh; } }
+  footer .push-btn input {
+    width: 80%;
+    height: 125px;
+    position: fixed;
+    left: 10%;
+    bottom: 4%;
+    border: none;
+    outline: none; }
+    @media screen and (min-width: 960px) {
+      footer .push-btn input {
+        left: 1%;
+        bottom: 2%;
+        width: 100%;
+        height: 17vh; } }
+    footer .push-btn input:hover {
+      cursor: pointer; }
+  footer .push-btn span {
+    display: block;
+    margin-top: 8%;
+    text-align: center;
+    font-size: 1.6rem; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      footer .push-btn span {
+        margin-top: 4%;
+        font-size: 1.4rem; } }
+    @media screen and (min-width: 960px) {
+      footer .push-btn span {
+        margin-top: 45px;
+        bottom: 60px;
+        font-size: 1.4rem; } }
 
 #app {
   height: 100vh;
   background-size: contain;
   background-position: center;
   background-image: url(../img/hs_mouth.png); }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 705px) and (max-width: 960px) {
     #app {
       position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      background-image: url(../img/hs_monster.png); } }
+  @media screen and (min-width: 960px) {
+    #app {
+      background-position: bottom;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100%;
       width: 100%;
       bottom: 0;
       background-image: url(../img/hs_monster.png); } }
   #app svg {
-    display: none; }
-    @media screen and (min-width: 769px) {
+    display: block; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      #app svg {
+        display: block; } }
+    @media screen and (min-width: 960px) {
       #app svg {
         display: block;
         z-index: 1;
         position: fixed;
-        width: 24%;
-        top: 37%;
-        left: 38%; } }
+        width: 24vw;
+        left: 38%;
+        bottom: 0%; } }
 
 .slot-container {
-  padding: 48% 5% 0;
-  color: white; }
-  @media screen and (min-width: 769px) {
+  color: white;
+  padding: 50% 0; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
     .slot-container {
-      padding: 17% 0;
-      margin: 0px 37%; } }
+      position: fixed;
+      padding: 0;
+      margin: 11% auto;
+      width: 35%; } }
+  @media screen and (min-width: 960px) {
+    .slot-container {
+      position: fixed;
+      padding: 0;
+      margin: 70px auto;
+      width: 24%; } }
   .slot-container table {
     width: 100%;
     margin: auto;
@@ -639,22 +739,19 @@ footer svg {
     font-weight: bold;
     text-align: center;
     margin-top: -12%; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 960px) {
       .slot-container table {
         margin-top: 10%; } }
   .slot-container td {
     display: block;
     padding: 0 10%; }
-  @media screen and (min-width: 769px) {
-    .slot-container td:first-child {
-      margin-top: 24%; } }
   .slot-container td:nth-child(2), .slot-container td:nth-child(3) {
     margin-top: 3%; }
   .slot-container label {
     display: block;
     font-size: .8rem;
     text-align: left; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 960px) {
       .slot-container label {
         font-size: .8rem; } }
   .slot-container tr div {
@@ -662,7 +759,7 @@ footer svg {
     padding: 4%;
     border-radius: 10px;
     font-size: 1.4rem; }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 960px) {
       .slot-container tr div {
         font-size: 1.4rem; } }
   .slot-container tr td:first-child > div {
@@ -671,47 +768,5 @@ footer svg {
     background-color: #77cb38; }
   .slot-container tr td:nth-child(3) > div {
     background-color: #ff9400; }
-  .slot-container .push-btn {
-    position: fixed;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: 20vh;
-    background-size: contain;
-    background-position: center;
-    background-image: url(../img/hs_tongue.png);
-    animation: skew 2.3s linear infinite; }
-    @media screen and (min-width: 769px) {
-      .slot-container .push-btn {
-        bottom: -34px;
-        left: 42%;
-        width: 16%;
-        height: 20vh; } }
-    .slot-container .push-btn input {
-      width: 80%;
-      height: 125px;
-      position: fixed;
-      left: 10%;
-      bottom: 4%;
-      border: none;
-      outline: none; }
-      @media screen and (min-width: 769px) {
-        .slot-container .push-btn input {
-          left: 1%;
-          bottom: 2%;
-          width: 100%;
-          height: 17vh; } }
-      .slot-container .push-btn input:hover {
-        cursor: pointer; }
-    .slot-container .push-btn span {
-      display: block;
-      margin-top: 8%;
-      text-align: center;
-      font-size: 1.6rem; }
-      @media screen and (min-width: 769px) {
-        .slot-container .push-btn span {
-          margin-top: 35px;
-          bottom: 60px;
-          font-size: 1.4rem; } }
 
 /*# sourceMappingURL=styles.css.map */
