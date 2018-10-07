@@ -640,15 +640,15 @@ footer {
     @media screen and (min-width: 705px) and (max-width: 960px) {
       footer svg {
         position: static;
-        width: 30vw; } }
+        width: 38vw; } }
     @media screen and (min-width: 960px) {
       footer svg {
         position: static;
         width: 24vw; } }
   footer .push-btn {
-    margin-top: -13%;
+    margin-top: -16%;
     width: 80%;
-    height: 20vh;
+    height: 30vh;
     background-size: contain;
     background-position: center;
     background-image: url(../img/hs_tongue.png);
@@ -664,7 +664,7 @@ footer {
     @media screen and (min-width: 705px) and (max-width: 960px) {
       footer .push-btn {
         position: fixed;
-        bottom: 1%;
+        bottom: 0;
         height: 13vh; } }
     @media screen and (min-width: 960px) {
       footer .push-btn {
@@ -674,11 +674,11 @@ footer {
         width: 20%;
         height: 12vw; } }
     footer .push-btn input {
-      width: 80%;
-      height: 125px;
+      width: 100%;
+      height: 175px;
       position: fixed;
-      left: 10%;
-      bottom: 4%;
+      left: 1%;
+      bottom: 0%;
       border: none;
       outline: none; }
       @media screen and (min-width: 960px) {
@@ -691,7 +691,7 @@ footer {
         cursor: pointer; }
     footer .push-btn span {
       display: block;
-      margin-top: 8%;
+      margin-top: 20%;
       text-align: center;
       font-size: 1.6rem; }
       @media screen and (min-width: 705px) and (max-width: 960px) {
@@ -735,7 +735,7 @@ footer {
 
 .slot-container {
   color: white;
-  padding: 50% 0; }
+  padding: 45% 0; }
   @media screen and (min-width: 705px) and (max-width: 960px) {
     .slot-container {
       position: fixed;
@@ -747,7 +747,7 @@ footer {
       position: fixed;
       padding: 0;
       margin: 70px auto;
-      width: 24%; } }
+      width: 27%; } }
   .slot-container table {
     width: 100%;
     margin: auto;
