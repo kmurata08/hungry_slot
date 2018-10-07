@@ -646,9 +646,10 @@ footer {
         position: static;
         width: 24vw; } }
   footer .push-btn {
-    margin-top: -16%;
+    position: fixed;
+    bottom: 0;
     width: 80%;
-    height: 30vh;
+    height: 50vw;
     background-size: contain;
     background-position: center;
     background-image: url(../img/hs_tongue.png);
@@ -665,7 +666,7 @@ footer {
       footer .push-btn {
         position: fixed;
         bottom: 0;
-        height: 13vh; } }
+        height: 11vh; } }
     @media screen and (min-width: 960px) {
       footer .push-btn {
         position: fixed;
@@ -675,12 +676,17 @@ footer {
         height: 12vw; } }
     footer .push-btn input {
       width: 100%;
-      height: 175px;
+      height: 45vw;
       position: fixed;
       left: 1%;
       bottom: 0%;
       border: none;
       outline: none; }
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        footer .push-btn input {
+          height: 11vh;
+          width: 30vw;
+          left: 32%; } }
       @media screen and (min-width: 960px) {
         footer .push-btn input {
           left: 1%;
@@ -704,13 +710,14 @@ footer {
           font-size: 1.4rem; } }
 
 #app {
-  height: 100vh;
-  background-size: contain;
+  padding: 60% 0;
+  background-size: cover;
   background-position: center;
   background-image: url(../img/hs_mouth.png); }
   @media screen and (min-width: 705px) and (max-width: 960px) {
     #app {
       background-position: bottom;
+      padding-top: 0;
       position: fixed;
       display: flex;
       align-items: center;
@@ -722,6 +729,7 @@ footer {
   @media screen and (min-width: 960px) {
     #app {
       background-position: bottom;
+      padding-top: 0;
       position: fixed;
       display: flex;
       align-items: center;
@@ -734,18 +742,15 @@ footer {
     display: block; }
 
 .slot-container {
-  color: white;
-  padding: 45% 0; }
+  color: white; }
   @media screen and (min-width: 705px) and (max-width: 960px) {
     .slot-container {
       position: fixed;
-      padding: 0;
       margin: 11% auto;
       width: 40%; } }
   @media screen and (min-width: 960px) {
     .slot-container {
       position: fixed;
-      padding: 0;
       margin: 70px auto;
       width: 27%; } }
   .slot-container table {
