@@ -644,7 +644,7 @@ footer {
     @media screen and (min-width: 960px) {
       footer svg {
         position: static;
-        width: 23vw; } }
+        width: 24vw; } }
   footer .push-btn {
     margin-top: -13%;
     width: 80%;
