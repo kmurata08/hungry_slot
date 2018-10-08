@@ -649,7 +649,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 80%;
-    height: 50vw;
+    height: 40vw;
     background-size: contain;
     background-position: center;
     background-image: url(../img/hs_tongue.png);
@@ -697,7 +697,7 @@ footer {
         cursor: pointer; }
     footer .push-btn span {
       display: block;
-      margin-top: 20%;
+      margin-top: 15%;
       text-align: center;
       font-size: 1.6rem; }
       @media screen and (min-width: 705px) and (max-width: 960px) {
@@ -710,14 +710,15 @@ footer {
           font-size: 1.4rem; } }
 
 #app {
-  padding: 60% 0;
+  padding: 58% 0;
   background-size: cover;
   background-position: center;
   background-image: url(../img/hs_mouth.png); }
   @media screen and (min-width: 705px) and (max-width: 960px) {
     #app {
       background-position: bottom;
-      padding-top: 0;
+      background-size: contain;
+      padding: 0;
       position: fixed;
       display: flex;
       align-items: center;
@@ -729,7 +730,8 @@ footer {
   @media screen and (min-width: 960px) {
     #app {
       background-position: bottom;
-      padding-top: 0;
+      background-size: contain;
+      padding: 0;
       position: fixed;
       display: flex;
       align-items: center;

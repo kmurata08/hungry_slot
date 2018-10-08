@@ -220,7 +220,7 @@ footer{
         position: fixed;
         bottom: 0;
         width: 80%;
-        height: 50vw;
+        height: 40vw;
         background-size: contain;
         background-position: center;
         background-image : url(../img/hs_tongue.png);
@@ -271,7 +271,7 @@ footer{
         }
         & span{
             display: block;
-            margin-top: 20%;
+            margin-top: 15%;
             text-align: center;
             font-size: 1.6rem;
             @include media-queries-tab {
@@ -287,13 +287,14 @@ footer{
 }
 
 #app{
-    padding: 60% 0;
+    padding: 58% 0;
     background-size: cover;
     background-position: center;
     background-image : url(../img/hs_mouth.png);
     @include media-queries-tab {
         background-position: bottom;
-        padding-top: 0;
+        background-size: contain;
+        padding: 0;
         position: fixed;
         display: flex;
         align-items: center;
@@ -305,7 +306,8 @@ footer{
     }
     @include media-queries-pc {
         background-position: bottom;
-        padding-top: 0;
+        background-size: contain;
+        padding: 0;
         position: fixed;
         display: flex;
         align-items: center;
