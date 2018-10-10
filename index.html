@@ -17,25 +17,30 @@
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
     <style type="text/css">
         [v-cloak] {
-          display: none;
+            display: none;
         }
     </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121656681-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'UA-121656681-2');
     </script>
 </head>
+
 <body>
     <header>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 749.2 138.28"><defs><style>.cls-1{fill:#fff;}</style></defs><title>上歯</title><path class="cls-1" d="M-775.4,413.14V476.5c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92S-176,517.88-176,476.5c0,41.38,0,74.92,74.92,74.92S-26.2,517.88-26.2,476.5V413.14Z" transform="translate(775.4 -413.14)"/></svg>
-        <a class="hover-buru" href="http://www.edgenium.com/" target="_blank"><img src="static/img/hs_logo_em.png" alt="ロゴ"/></a>
+        <svg class="upper-tooth" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 749.2 138.28"><defs><style>.cls-1{fill:#fff;}</style></defs><title>上歯</title><path class="cls-1" d="M-775.4,413.14V476.5c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92s74.92-33.54,74.92-74.92c0,41.38,0,74.92,74.92,74.92S-176,517.88-176,476.5c0,41.38,0,74.92,74.92,74.92S-26.2,517.88-26.2,476.5V413.14Z" transform="translate(775.4 -413.14)"/></svg>
+        <a class="logo hover-buru" href="http://www.edgenium.com/" target="_blank"><img src="static/img/hs_logo_em.png" alt="ロゴ"/></a>
         <div class="title">
             <img src="static/img/hs_logo.png" alt="ロゴ" />
-            <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.59 45.59"><defs><style>.cls-1{fill:#fff;}</style></defs><title>インフォメーション</title><path class="cls-1" d="M-199.89,445.33a22.79,22.79,0,0,0-22.8,22.79,22.8,22.8,0,0,0,22.8,22.8,22.8,22.8,0,0,0,22.8-22.8A22.79,22.79,0,0,0-199.89,445.33Zm2.13,8.23c2.22,0,2.88,1.29,2.88,2.76a3.67,3.67,0,0,1-4,3.54c-2.11,0-3.11-1.05-3-2.8C-201.92,455.58-200.68,453.56-197.76,453.56Zm-5.69,28.22c-1.52,0-2.63-.93-1.57-5l1.74-7.18c.3-1.15.35-1.61,0-1.61a11.42,11.42,0,0,0-3.59,1.58l-.76-1.25c3.69-3.08,7.94-4.89,9.76-4.89,1.52,0,1.77,1.8,1,4.56l-2,7.55c-.36,1.34-.21,1.8.15,1.8a7.83,7.83,0,0,0,3.41-1.71l.86,1.15C-198,480.39-201.94,481.78-203.45,481.78Z" transform="translate(222.69 -445.33)"/></svg>-->
+            <a class="modal-open" data-content="#info-modal">
+                <svg class="hover-buru" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.59 45.59"><defs><style>.cls-1{fill:#fff;}</style></defs><title>info</title><path class="cls-1" d="M-199.89,445.33a22.79,22.79,0,0,0-22.8,22.79,22.8,22.8,0,0,0,22.8,22.8,22.8,22.8,0,0,0,22.8-22.8A22.79,22.79,0,0,0-199.89,445.33Zm2.13,8.23c2.22,0,2.88,1.29,2.88,2.76a3.67,3.67,0,0,1-4,3.54c-2.11,0-3.11-1.05-3-2.8C-201.92,455.58-200.68,453.56-197.76,453.56Zm-5.69,28.22c-1.52,0-2.63-.93-1.57-5l1.74-7.18c.3-1.15.35-1.61,0-1.61a11.42,11.42,0,0,0-3.59,1.58l-.76-1.25c3.69-3.08,7.94-4.89,9.76-4.89,1.52,0,1.77,1.8,1,4.56l-2,7.55c-.36,1.34-.21,1.8.15,1.8a7.83,7.83,0,0,0,3.41-1.71l.86,1.15C-198,480.39-201.94,481.78-203.45,481.78Z" transform="translate(222.69 -445.33)"/></svg>
+            </a>
         </div>
     </header>
     <main id="app" v-cloak>
@@ -65,7 +70,28 @@
             </div>
         </footer>
     </main>
+    <div class="modal-container" id="info-modal">
+        <div class="modal-box">
+            <div class="modal-close hover-op">
+                <div class="modal-close-button">
+                    <div class="modal-button-inner"></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>「今日のご飯どうしよう？」<br>「何食べたい？」</p>
+                    <p>決まって返ってくる言葉は<br> 「なんでもいい」</p>
+                    <p>おーけーそれなら神様に決めてもらおう。</p>
+                    <p>そんな思いつきで作りました。</p>
+                    <p>ガチの献立に使うも良し、<br> 宅飲みで友達と遊ぶのも良し。</p>
+                    <p>次世代の料理がここから誕生することを願って。</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./script.js"></script>
 </body>
+
 </html>

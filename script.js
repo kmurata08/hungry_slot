@@ -107,3 +107,49 @@ var app = new Vue({
         }
     }
 });
+
+$('.modal-open').click(function(){
+    modalOpen(this);
+    var contentId = '#' + $(this).attr('data-content');
+    var contentHtml = $(contentId).html();
+    $('.modal-body').html(contentHtml);
+})
+
+var current_scrollY;
+function modalOpen(obj) {
+    current_scrollY = $( window ).scrollTop();
+
+    $( 'body' ).css( {
+        position: 'fixed',
+        width: '100%',
+        top: -1 * current_scrollY
+    });
+    $('body').append('<div class="modal-overlay"></div>');
+    $('.modal-overlay').fadeIn('fast');
+    $('.modal-container').css( {
+        display: 'block',
+    });
+    $('.modal-box').css( {
+        display: 'block',
+    });
+    var modal = '#' + $(obj).attr('data-target');
+    modalResize();
+    $(modal).fadeIn('fast');
+    $(window).on('resize', function(){
+        modalResize();
+    });
+    function modalResize(){
+        var w = $(window).width();
+        var h = $(window).height();
+        var x = (w - $(modal).outerWidth(true)) / 2;
+        var y = (w - $(modal).outerHeight(true)) / 10;
+        $(modal).css({'left': x + 'px','top': y + 'px'});
+    }
+}
+
+$('.modal-overlay, .modal-close, .btn-cancel').off().click(function(){
+    $('.modal-box,.modal-overlay').fadeOut(300);
+    $( 'body,.modal-container' ).attr( { style: '' } );
+    $( 'html, body' ).prop( { scrollTop: current_scrollY } );
+    $('.modal-overlay').remove();
+});

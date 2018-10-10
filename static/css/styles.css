@@ -563,43 +563,46 @@ header {
   position: fixed;
   top: 0;
   z-index: 2; }
-  header svg:first-child {
+  header svg.upper-tooth {
     display: block;
     z-index: 1;
     position: fixed;
     top: -30px; }
     @media screen and (min-width: 705px) and (max-width: 960px) {
-      header svg:first-child {
+      header svg.upper-tooth {
         display: none; } }
     @media screen and (min-width: 960px) {
-      header svg:first-child {
+      header svg.upper-tooth {
         display: none; } }
-  header a {
+  header a.logo {
     z-index: 1;
     position: fixed;
-    top: 1%;
-    left: 4%; }
-    @media screen and (min-width: 960px) {
-      header a {
-        top: 4%; } }
-    header a img {
+    margin: 1% 4%; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      header a.logo {
+        margin: 15px 0 0 15px; } }
+    header a.logo img {
       width: 46px;
       height: auto; }
       @media screen and (min-width: 705px) and (max-width: 960px) {
-        header a img {
+        header a.logo img {
           width: 60px; } }
       @media screen and (min-width: 960px) {
-        header a img {
+        header a.logo img {
           width: 84px; } }
   header .title {
     position: fixed;
     z-index: 1;
+    padding-top: 17%;
     width: 100%;
-    margin-top: 16%;
     text-align: center; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      header .title {
+        padding-top: 0; } }
     @media screen and (min-width: 960px) {
       header .title {
-        margin-top: 4%; } }
+        margin-top: 46px;
+        padding-top: 0; } }
     header .title img {
       max-width: 170px; }
       @media screen and (min-width: 705px) and (max-width: 960px) {
@@ -608,16 +611,25 @@ header {
       @media screen and (min-width: 960px) {
         header .title img {
           display: none; } }
-    header .title svg {
-      position: absolute;
-      width: 6%;
-      margin-top: 5%;
-      margin-left: 5%; }
+    header .title a {
+      position: fixed;
+      right: 16%;
+      margin-top: 4%;
+      width: 22px; }
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        header .title a {
+          right: 0;
+          margin: 15px 15px 0 0; } }
       @media screen and (min-width: 960px) {
-        header .title svg {
-          width: 2%;
-          right: 18%;
-          position: relative; } }
+        header .title a {
+          position: static;
+          margin-left: 220px; } }
+      @media screen and (min-width: 705px) and (max-width: 960px) {
+        header .title a svg {
+          width: 18px; } }
+      @media screen and (min-width: 960px) {
+        header .title a svg {
+          width: 25px; } }
 
 footer {
   z-index: 1;
@@ -649,7 +661,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 80%;
-    height: 40vw;
+    height: 35vw;
     background-size: contain;
     background-position: center;
     background-image: url(../img/hs_tongue.png);
@@ -676,7 +688,7 @@ footer {
         height: 12vw; } }
     footer .push-btn input {
       width: 100%;
-      height: 45vw;
+      height: 35vw;
       position: fixed;
       left: 1%;
       bottom: 0%;
@@ -710,7 +722,7 @@ footer {
           font-size: 1.4rem; } }
 
 #app {
-  padding: 58% 0;
+  padding: 50% 0;
   background-size: cover;
   background-position: center;
   background-image: url(../img/hs_mouth.png); }
@@ -791,5 +803,137 @@ footer {
     background-color: #77cb38; }
   .slot-container tr td:nth-child(3) > div {
     background-color: #ff9400; }
+
+.modal-container {
+  display: none;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 4%;
+  color: white; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    .modal-container {
+      height: auto;
+      width: 500px;
+      margin-top: 8%;
+      margin-left: 15%; } }
+  @media screen and (min-width: 960px) {
+    .modal-container {
+      height: auto;
+      width: 500px;
+      margin-top: 3%; } }
+
+.modal-box {
+  display: block; }
+
+.modal-body {
+  padding: 0;
+  margin: 7% auto 0; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    .modal-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 12% 0 5%;
+      margin: 0 5%; } }
+  @media screen and (min-width: 960px) {
+    .modal-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 3% 3% 0;
+      margin: 0 8%; } }
+
+.modal-content {
+  text-align: center;
+  padding-top: 25%; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    .modal-content {
+      padding: 0; } }
+  @media screen and (min-width: 960px) {
+    .modal-content {
+      padding: 0 1%; } }
+  .modal-content p {
+    padding: 3% 0;
+    margin: 0;
+    text-align: center;
+    font-size: 10px;
+    font-size: 1rem; }
+    @media screen and (min-width: 705px) and (max-width: 960px) {
+      .modal-content p {
+        font-size: 12px;
+        font-size: 1.2rem; } }
+    @media screen and (min-width: 960px) {
+      .modal-content p {
+        text-align: left;
+        padding: 5% 13% 0;
+        font-size: 12px;
+        font-size: 1.2rem; } }
+
+.modal-close {
+  position: absolute !important;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  z-index: 5;
+  color: white;
+  width: 30px;
+  height: 30px; }
+  @media screen and (min-width: 705px) and (max-width: 960px) {
+    .modal-close {
+      margin-top: 15px;
+      margin-right: 10px; } }
+  @media screen and (min-width: 960px) {
+    .modal-close {
+      margin-top: 10px;
+      right: -7px; } }
+  .modal-close:hover {
+    cursor: pointer; }
+
+.modal-close-button {
+  margin-left: -10px; }
+  .modal-close-button::before {
+    content: '';
+    display: block;
+    margin-bottom: 17px;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: translate(5px, 0) rotate(45deg);
+    -ms-transform: translate(5px, 0) rotate(45deg);
+    transform: translate(5px, 0) rotate(45deg); }
+  .modal-close-button::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: translate(5px, 0) rotate(-45deg);
+    -ms-transform: translate(5px, 0) rotate(-45deg);
+    transform: translate(5px, 0) rotate(-45deg); }
+
+.modal-button-inner {
+  display: block;
+  opacity: 0; }
+
+.modal-overlay {
+  z-index: 4;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 78, 162, 0.95);
+  opacity: 0.8; }
 
 /*# sourceMappingURL=styles.css.map */
