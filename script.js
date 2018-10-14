@@ -10,19 +10,19 @@ var app = new Vue({
         // reel state
         states: [
             {
-                text: "-",
+                text: "さあ",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
             },
             {
-                text: "-",
+                text: "スロットを",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
             },
             {
-                text: "-",
+                text: "回してみよう！！",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
