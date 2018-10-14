@@ -3,26 +3,26 @@ var app = new Vue({
     el: '#app',
     data: {
         items: [
-            ['チーズたっぷり','激辛','苦学生の','絶景','中華風','和風','韓国風','イタリアン','甘辛','あっさりさっぱり','野菜たっぷり','豆腐でかさ増し','秒速','長生きしちゃう','我が家の','スタミナ','大根おろしたっぷり','ご飯がすすむ','ビールがすすむ'],
+            ['チーズたっぷり','激辛','苦学生の','絶景','中華風','和風','韓国風','イタリアン','甘辛','さっぱり','野菜たっぷり','ご飯がすすむ','豆腐でかさ増し','秒速','長生きしちゃう','我が家の','スタミナ','大根おろしたっぷり','ビールがすすむ'],
             ['牛','豚','チキン','キムチ','白身魚の','マーボー','豚肉','鮭','マグロ','魚介','レバー','ホルモン','さんま','豚バラ','牛ひき肉','豆腐'],
             ['ハンバーグ','カレー','鍋','丼','フライ','チャーハン','蒲焼き','うどん','そば','野菜炒め','ソテー','お好み焼き','ちらしずし','スープ','ステーキ','煮付け','煮込み','生姜焼き','シチュー','パスタ','ピザ','しゃぶしゃぶ','ドリア']
         ],
         // reel state
         states: [
             {
-                text: "さあ",
+                text: "いつまで",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
             },
             {
-                text: "スロットを",
+                text: "レシピ本で",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
             },
             {
-                text: "回してみよう！！",
+                text: "消耗してるの？",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
@@ -108,48 +108,38 @@ var app = new Vue({
     }
 });
 
-$('.modal-open').click(function(){
-    modalOpen(this);
-    var contentId = '#' + $(this).attr('data-content');
-    var contentHtml = $(contentId).html();
-    $('.modal-body').html(contentHtml);
-})
-
 var current_scrollY;
-function modalOpen(obj) {
-    current_scrollY = $( window ).scrollTop();
-
-    $( 'body' ).css( {
+$('.modal-open').click(function(){
+  current_scrollY = $( window ).scrollTop();
+      $( 'body' ).css( {
         position: 'fixed',
         width: '100%',
         top: -1 * current_scrollY
-    });
+      } );
     $('body').append('<div class="modal-overlay"></div>');
     $('.modal-overlay').fadeIn('fast');
-    $('.modal-container').css( {
-        display: 'block',
-    });
-    $('.modal-box').css( {
-        display: 'block',
-    });
-    var modal = '#' + $(obj).attr('data-target');
+    var modal = '#' + $(this).attr('data-target');
     modalResize();
     $(modal).fadeIn('fast');
+    // リサイズしたら表示位置を再取得
     $(window).on('resize', function(){
         modalResize();
     });
+    // モーダルコンテンツの表示位置を設定する関数
     function modalResize(){
+        // ウィンドウの横幅、高さを取得
         var w = $(window).width();
-        var h = $(window).height();
+        //var h = $(window).height();
+        // モーダルコンテンツの表示位置を取得
         var x = (w - $(modal).outerWidth(true)) / 2;
-        var y = (w - $(modal).outerHeight(true)) / 10;
-        $(modal).css({'left': x + 'px','top': y + 'px'});
+        //var y = (w - $(modal).outerHeight(true)) / 2;
+        // モーダルコンテンツの表示位置を設定
+        $(modal).css({'left': x + 'px'});
     }
-}
-
-$('.modal-overlay, .modal-close, .btn-cancel').off().click(function(){
-    $('.modal-box,.modal-overlay').fadeOut(300);
-    $( 'body,.modal-container' ).attr( { style: '' } );
-    $( 'html, body' ).prop( { scrollTop: current_scrollY } );
-    $('.modal-overlay').remove();
-});
+    });
+    $('.modal-overlay, .modal-close').off().click(function(){
+        $('.modal-content,.modal-overlay').fadeOut(300);
+        $( 'body' ).attr( { style: '' } );
+        $( 'html, body' ).prop( { scrollTop: current_scrollY } );
+        $('.modal-overlay').remove();
+    });
