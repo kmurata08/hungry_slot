@@ -10,7 +10,7 @@ var app = new Vue({
         // reel state
         states: [
             {
-                text: "いつまで",
+                text: "まだ",
                 isRunning: false,
                 timerId: null,
                 animCls: ""
