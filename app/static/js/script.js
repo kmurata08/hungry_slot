@@ -31,16 +31,8 @@ var app = new Vue({
         nextStopReelIdx: 0,
         isStopping: true,
         buttonLabel: "START",
-        result: "------"
     },
     methods: {
-        /**
-         * 結果を出力する
-         */
-        showResult: function() {
-            var textMap = this.states.map(x => x.text);
-            this.result = textMap.join('');
-        },
         /**
          * 特定のリールを動かす
          */
@@ -94,7 +86,6 @@ var app = new Vue({
 
             // 全部止まったら結果を出す
             if (this.isStopping) {
-                this.showResult();
                 this.buttonLabel = "START";
             }
         },
