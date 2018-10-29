@@ -61,6 +61,7 @@ var app = new Vue({
         startSlot: function() {
             for (var idx = 0; idx < this.states.length; idx++) {
                 this.startReel(idx);
+                this.states[idx].animCls = "purun";
             }
             this.isStopping = false;
             this.buttonLabel = "STOP";
